@@ -59,9 +59,6 @@
         },
         {
             "src" : "/translations/language/(?<lang>[^/]*)", "dest" : "server.js?lang=$lang"
-        },
-        {
-            "src" : "/translations/all-translations", "dest" : "server.js"
-        }
+        
     ]
   }
