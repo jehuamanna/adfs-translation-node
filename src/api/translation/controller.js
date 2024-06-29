@@ -6,7 +6,8 @@ const crypto = require('crypto');
 
 const getAlltranslation = async (req, res) => {
   try {
-    const translationsPath = path.join(__dirname, '../../../translations');
+    // const translationsPath = path.join(__dirname, '../../../translations');
+    const translationsPath = "/tmp";
     const files = await fs.readdir(translationsPath);
 
     const jsonFiles = files.filter((file) => path.extname(file) === '.json');
@@ -36,7 +37,8 @@ const getAlltranslation = async (req, res) => {
 
 const updateTranslation = async (req, res) => {
   try {
-    const translationsPath = path.join(__dirname, '../../../translations');
+    // const translationsPath = path.join(__dirname, '../../../translations');
+    const translationsPath = "/tmp";
 
     for (const lang of Object.keys(req.body)) {
       const filePath = path.join(translationsPath, `${lang}.json`);
@@ -58,7 +60,9 @@ const updateTranslation = async (req, res) => {
 const getLanguageVersion = async (req, res) => {
   try {
     const lang = req.params.lang;
-    const translationsPath = path.join(__dirname, '../../../translations');
+    // const translationsPath = path.join(__dirname, '../../../translations');
+    const translationsPath = "/tmp";
+
     const filePath = path.join(translationsPath, `${lang}.json`);
     const data = await fs.readFile(filePath, 'utf-8');
     const jsonData = JSON.parse(data);
@@ -79,7 +83,8 @@ const getLanguageVersion = async (req, res) => {
 const getLanguageData = async (req, res) => {
   try {
     const lang = req.params.lang;
-    const translationsPath = path.join(__dirname, '../../../translations');
+    // const translationsPath = path.join(__dirname, '../../../translations');
+    const translationsPath = "/tmp";
     const filePath = path.join(translationsPath, `${lang}.json`);
     const data = await fs.readFile(filePath, 'utf-8');
     const jsonData = JSON.parse(data);
